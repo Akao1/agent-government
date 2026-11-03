@@ -28,6 +28,7 @@ This repo's answer is not another agent framework, but a layer of **institution*
 | **Institutional memory crosses projects; case files never do** | An official's craft travels with the office; a project's secrets stay home | Official archives live globally; facts from project A are structurally unable to leak into project B |
 | **The reviewer must not be the drafter** | Same-executor review must be labeled as such, never faked as independent | The same_tool principle: three blind-drafted ballots per deliberation, provenance honestly labeled |
 | **Censors patrol, never garrison** | Auditing is periodic and mobile — never resident, never colluding, never a bottleneck | One censor patrols all six ministries by checklist: post-release spot check + weekly patrol + anomaly-triggered impeachment |
+| **Ancestral canon (risk rules)** | Law-making belongs to the user alone; external vs internal risks governed differently — external can only be defended, internal must be cured | Risk canon splits four powers (make/store/apply/audit); waivers leave a trace; violations always escalate, never silently patched |
 
 ## The Full Chart
 
@@ -89,6 +90,29 @@ The government builds no new execution machinery — map it onto your existing t
 | Patrol triggers | Cron jobs running audit scripts |
 | Drafting & approval | Your tool's plan-approval mode / confirmation prompts |
 | Official memory | Plain files + on-demand retrieval (see [`docs/官员记忆规范.md`](docs/官员记忆规范.md)) |
+
+## Comparison with Related Projects
+
+The "organization for multi-agent" idea has several implementations. This project's position differs — **they are execution frameworks bound to specific platforms; this project is a tool-agnostic governance layer** (pure contract files, pluggable into any tooling):
+
+| | [Edict](https://github.com/cft0808/edict) (17k★) | [Emperor](https://github.com/solonlab/Emperor) | [MetaGPT](https://github.com/foundationagents/metagpt) / [ChatDev](https://github.com/OpenBMB/ChatDev) / [CrewAI](https://github.com/crewAIInc/crewAI) | This project |
+|---|---|---|---|---|
+| Metaphor | Tang court | Three Departments | Modern company (software firm / crew) | Three Departments + Secretariat + Censorate + Hanlin |
+| Form | OpenClaw platform | OpenCode plugin | Code framework | **Pure governance contracts (md files)** |
+| Decision/execution split | Departmental separation | Departmental separation | Role SOP pipeline | Grand Secretariat ballots (edicts) vs Secretariat (memorials) as distinct documents |
+| Independent audit | System audit logs | ✗ | ✗ | **Censorate** (patrols / archive audits / hearsay impeachment / ballot veto) |
+| Cross-session official memory | History office on roadmap | ✗ | ✗ | **Hanlin three-tier memory** (diary→annals→national history, separated history-editing power) |
+| Human approval | Imperial approval on roadmap | Keyword-triggered | ✗ | **Approval institution** (four must-approve categories; no proxy, no default, no auto-approve) |
+| Honesty labeling | ✗ | ✗ | ✗ | **same_tool principle** (same-model ballots never fake independent opinions) |
+| Official lifecycle | Resident agents | Resident agents | Resident roles | **Officials flow** (on-demand instantiation, archive-based memory) |
+| Anti-degradation | ✗ | ✗ | ✗ | **Anti-degradation clauses** (no "Eastern Depot"; the historical system's decline is the firewall) |
+
+In one line: Edict & co. built courts; this project wrote the charter. They are not mutually exclusive — an execution framework can adopt this governance layer via the contracts.
+
+## Engineering Tips
+
+- **Lightweight approval**: auto-escalate edicts to must-approve via keyword/operation detection (delete, production, secrets, publishing, payment) — Emperor's mixed mode works this way. Note: keyword detection is a guardrail, not judgment; "no keyword hit" never means "no approval needed".
+- **Triage first**: route messages before anything else (chitchat gets direct answers, real requests enter the pipeline) so everyday conversation doesn't trigger the full court ceremony.
 
 ## FAQ
 
