@@ -39,7 +39,7 @@ Grand Secretariat (cross-project · 3 Secretaries · draft only, never execute)
   │  Outputs an "Edict": decision + routing + whether approval is required
   │  Three tiers: Memorandum / Deliberation / Countersign
   │  Ballots drafted mutually blind · dissent preserved verbatim
-  │      ↑Edict veto: Chancellery (Shizhong)    ↑Ballot veto: Censorate
+  │      ↑Formal veto: Chancellery (Shizhong)    ↑Veto petition: Censorate (Chayuan)
   ↓Edict (minor matters execute directly; major ones await approval)
 Three Departments + Six Ministries (outside the Secretariat · the administration)
   Secretariat (zhongshu): turn edicts into "memorials" (task contracts/design/acceptance)
@@ -48,8 +48,14 @@ Three Departments + Six Ministries (outside the Secretariat · the administratio
     (Shangshu Ling = your scheduler script — permanently vacant)
     └─ Six Ministries (per-workspace functional partitions):
        Personnel / Revenue / Rites / War / Justice / Works
-Censorate (cross-project · independent): patrol checklist · post-release spot checks
-  · impeachment · archive audits · case closure review · ballot veto
+Censorate (cross-project · independent, four powers split)
+  Chayuan investigating censors: patrol the six ministries · report gaps, overreach, evidence problems
+  Taiyuan censors: post-release spot checks · archive audits · case closure after independent re-verification
+Court of Judicial Review (per-case): verify reported facts · confirmed cases go to the Secretariat
+Hanlin Academy (cross-project · independent · sole keeper of history):
+  diary→annals distillation · national-history nominations (triple admission) · separated history-editing power
+Investigation Office (cross-project · direct · external fact-checking):
+  time-sensitive online verification · multi-source cross-checks · inquiry memoranda
 ```
 
 **Mapping offices to tools** (key: programs never hold judgment):
@@ -63,7 +69,11 @@ Censorate (cross-project · independent): patrol checklist · post-release spot 
 | Shangshu Ling | Task scheduler script | **Permanently vacant** — the title goes to the program, the judgment stays with agents and the human |
 | Puye | Current session model | Does the actual scheduling |
 | Six Ministers | Lead contracts of each functional partition | Countersign power (review ballots from their domain); never join the Secretariat |
-| Censor | Independent audit agent | Inspect only, never modify; never an executor of the same task |
+| Chayuan Investigating Censor | Patrol-audit role | Inspect & report only; discovers → reports, may petition a veto |
+| Taiyuan Censor | Case-closure role | Post-release spot checks + archive audits + independent re-verification; recuses from all parties of the case |
+| Court of Judicial Review | Per-case fact verification | Verifies reported facts; cases touching the Secretariat/Chancellery go straight to the user |
+| Hanlin | Sole keeper of history | Annals distillation + national-history nominations; censors audit but never edit; historians never write their own story |
+| Investigation Commissioner | External fact-checker | Time-sensitive online verification with inquiry memoranda; facts only, never people |
 
 ## Quick Start
 
@@ -100,8 +110,9 @@ The "organization for multi-agent" idea has several implementations. This projec
 | Metaphor | Tang court | Three Departments | Modern company (software firm / crew) | Three Departments + Secretariat + Censorate + Hanlin |
 | Form | OpenClaw platform | OpenCode plugin | Code framework | **Pure governance contracts (md files)** |
 | Decision/execution split | Departmental separation | Departmental separation | Role SOP pipeline | Grand Secretariat ballots (edicts) vs Secretariat (memorials) as distinct documents |
-| Independent audit | System audit logs | ✗ | ✗ | **Censorate** (patrols / archive audits / hearsay impeachment / ballot veto) |
+| Independent audit | System audit logs | ✗ | ✗ | **Censorate, four powers split** (Chayuan reports / Court verifies / Chancellery vetoes / Taiyuan closes) |
 | Cross-session official memory | History office on roadmap | ✗ | ✗ | **Hanlin three-tier memory** (diary→annals→national history, separated history-editing power) |
+| External time-sensitive fact-checking | ✗ | ✗ | ✗ | **Investigation Office** (online verification with dated, linked inquiry memoranda; facts vs judgments separated) |
 | Human approval | Imperial approval on roadmap | Keyword-triggered | ✗ | **Approval institution** (four must-approve categories; no proxy, no default, no auto-approve) |
 | Honesty labeling | ✗ | ✗ | ✗ | **same_tool principle** (same-model ballots never fake independent opinions) |
 | Official lifecycle | Resident agents | Resident agents | Resident roles | **Officials flow** (on-demand instantiation, archive-based memory) |
